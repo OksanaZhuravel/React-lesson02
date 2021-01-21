@@ -1,0 +1,12 @@
+.root {
+    font-family: "Arial", sens-serif;
+    background-color: lightblue;
+    width: 100%;
+}
+.text-author {
+    color: gray;
+}
+
+.text {
+    color: black;
+}
