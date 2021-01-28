@@ -1,5 +1,5 @@
 const path = require("path");
-/*const webpack = require("webpack");*/
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -26,14 +26,14 @@ module.exports = {
                 test: /.(css)$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
-/*            {
+            {
                 loader: "babel-loader",
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 options: {
                     presets: ["@babel/preset-env", "@babel/preset-react"]
                 }
-            },*/
+            },
 
         ],
     },
@@ -47,5 +47,12 @@ module.exports = {
             chunkFilename: "[id].css",
         }),
     ],
+    devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
+
 
 };

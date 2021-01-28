@@ -1,0 +1,29 @@
+.chat-list {
+    width: 30%;
+    background-color: aquamarine;
+}
+.chat-list ul {
+    width: 50%;
+    margin: 0;
+    list-style-type: none;
+    padding: 0 0 0 35px;
+}
+.chat-list li {
+    margin: 0 0 10px 0;
+    position: relative;
+    text-align: left;
+}
+/*.chat-list li:before {
+    content: "+";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: darkslateblue;
+    color: black;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: -35px;
+}*/

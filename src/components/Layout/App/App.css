@@ -1,0 +1,44 @@
+.posts {
+    display: flex;
+    flex-flow: column wrap;
+    width: 70%;
+    background-color: cadetblue;
+}
+
+
+.message {
+    width: 70%;
+    background-color: lightblue;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.message-sender {
+    color: gray;
+    font-size: 14px;
+}
+.button {
+    width: 150px;
+    background-color: blue;
+    color: aliceblue;
+    padding: 5px;
+    border: 2px solid darkslateblue;
+    border-radius: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.button:hover {
+    background-color: aliceblue;
+    color: blue;
+}
+.button:active {
+    background-color: darkmagenta;
+    color: black;
+}
+.input {
+    min-width: 250px;
+    padding: 2px;
+    text-transform: capitalize;
+}

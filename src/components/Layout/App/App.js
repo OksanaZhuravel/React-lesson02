@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import "./App.css";
-import Message from "./message";
-import Input from "./input";
-import ChatList from "./ChatList";
-import Header from "./Header";
+import Message from "./Message";
+import Input from "./Input";
+
 
 export default function App(callback, deps) {
     const [messages, setMessages] = useState(
@@ -14,9 +13,7 @@ export default function App(callback, deps) {
         ]
     );
 
-
-
-    const renderMessage = useCallback((message, i) => {
+ const renderMessage = useCallback((message, i) => {
         return (
             <Message massage = {message} key={i}/>
         );
@@ -41,21 +38,11 @@ export default function App(callback, deps) {
 
     return (
         <>
-            <Header />
-            <div className="list">
-                <ChatList />
+            <div className="posts">{messages.map(renderMessage)}
+            <div className="counter">
+                <Input onAddMessage={handleAddMessage}/>
             </div>
-            <div className="layout">
-                <div className="message-field">
-                    {messages.map(renderMessage)}
-                </div>
-
-                <div>
-                    <Input onAddMessage={handleAddMessage}/>
-                </div>
             </div>
         </>
-
-
-);
+    );
 }

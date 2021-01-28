@@ -1,6 +1,4 @@
 import React, { useState, useCallback } from 'react';
-import {TextField } from '@material-ui/core';
-
 
 export default function Input({ onAddMessage }){
     const [value, setValue] = useState('');
@@ -15,13 +13,9 @@ export default function Input({ onAddMessage }){
         setValue(' ');
     }, [onAddMessage, value]);
     return (
-        <form onSubmit={handleSubmit} >
-            <TextField
-                label="Введите " variant="outlined" for="war"
-                input id="war" type='text' onChange={handleChange} value={value} />
-            <TextField
-                label variant="filled" for="name"
-                input id="name" type='submit'  value="Ввод"/>
+        <form onSubmit={handleSubmit}>
+            <input className="input" placeholder="Ввведите свое сообщение" type="text" onChange={handleChange} value={value} />
+            <button className="button">Ввод</button>
         </form>
     )
 }
