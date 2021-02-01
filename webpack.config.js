@@ -1,13 +1,9 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry:
-      path.join(__dirname,"src", "index.js"),
-
-
+    entry: path.join(__dirname, "src", "index.js"),
     output: {
         path: path.join(__dirname, "build"),
         filename: "bundle.js",
@@ -26,16 +22,10 @@ module.exports = {
                 test: /.(css)$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
-            {
-                loader: "babel-loader",
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                options: {
-                    presets: ["@babel/preset-env", "@babel/preset-react"]
-                }
-            },
-
         ],
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -47,12 +37,4 @@ module.exports = {
             chunkFilename: "[id].css",
         }),
     ],
-    devServer: {
-        port: 8080,
-        historyApiFallback: {
-            index: 'index.html'
-        }
-    },
-
-
 };

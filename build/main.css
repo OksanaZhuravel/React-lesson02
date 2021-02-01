@@ -50,6 +50,10 @@
   font-size: 25px;
   min-height: 60px;
 }
+.profile {
+    padding: 20px;
+    background-color: olivedrab;
+}
 .chat-list {
     width: 30%;
     background-color: aquamarine;
