@@ -50,13 +50,12 @@
   font-size: 25px;
   min-height: 60px;
 }
-.profile {
-    padding: 20px;
-    background-color: olivedrab;
-}
 .chat-list {
     width: 30%;
     background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
 }
 .chat-list ul {
     width: 50%;
@@ -90,5 +89,8 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
-
-/*# sourceMappingURL=main.css.map*/
+.profile {
+    padding: 20px;
+    background-color: olivedrab;
+    font-size: 13px;
+}
