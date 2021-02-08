@@ -7,9 +7,7 @@ export default class Profile extends React.Component {
     static propTypes = {
         profileId: PropTypes.number,
     };
-    static defaultProps = {
-       profileId: 1,
-    };
+
     state = {
         name: 'Oleg', lastname: 'ivanov', about: '**--**',
     }

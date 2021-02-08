@@ -4,7 +4,6 @@ import connect from "react-redux/es/connect/connect";
 import  PropTypes from 'prop-types';
 import "./chatlist.css";
 import {push} from 'connected-react-router';
-/*import {Link} from "react-router-dom";*/
 import {ListItem, TextField, } from "@material-ui/core";
 import { addChat} from "../../actions/chatActions";
 
@@ -39,7 +38,7 @@ class ChatList extends React.Component {
         const { chats } = this.props;
         const chatElements = Object.keys(chats).map(chatId => (
             <ListItem
-                key={ chatId }
+                /*key={ chatId }*/
                 primarytext={ chats[chatId].title }
                 onClick={ () => this.handleNavigate(`/chat/${chatId}`) }
             />));

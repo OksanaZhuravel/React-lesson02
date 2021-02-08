@@ -10,8 +10,8 @@ const {store, persistent} = initStore();
 
 ReactDom.render(
     <Provider store={ store }>
-        <PersistGate loading={ null } persistent={persistent}>
-            <ConnectedRouter history={history}>
+        <PersistGate loading={ null } persistent={ persistent }>
+            <ConnectedRouter history={ history }>
                 <Router/>
             </ConnectedRouter>
         </PersistGate>

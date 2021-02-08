@@ -5,6 +5,9 @@ import {bindActionCreators } from "redux";
 import connect from "react-redux/es/connect/connect";
 import Message from '../../components/Message';
 import {TextField} from "@material-ui/core";
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { sendMessage, loadMessages } from '../../actions/messageActions';
+import { loadChats } from '../../actions/chatActions';
 
 
 class App extends React.Component {
@@ -13,6 +16,7 @@ class App extends React.Component {
         messages: PropTypes.object.isRequired,
         chats: PropTypes.object.isRequired,
         sendMessage: PropTypes.func.isRequired,
+        isLoading: PropTypes.bool.isRequired
     };
     state = {
         input: '',
@@ -36,8 +40,14 @@ class App extends React.Component {
             this.handleSendMessage(this.state.input, 'me')
         }
     };
+    componentDidMount() {
+        this.props.loadMessages();
+    };
 
     render() {
+        if (this.props.isLoading) {
+            return <CircularProgress />
+        }
         const { chatId, messages, chats } = this.props;
         const messageElements = chats[chatId].messageList.map((messageId) => (
             <Message
@@ -60,11 +70,13 @@ class App extends React.Component {
         ]
     }
 }
-const mapStateToProps = ({ chatReducer }) => ({
+const mapStateToProps = ({ chatReducer, messageReducer }) => ({
     chats: chatReducer.chats,
+    messages: messageReducer.messages,
+    isLoading: messageReducer.isLoading
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({sendMessage, loadMessages, loadChats }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
