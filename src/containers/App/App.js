@@ -1,12 +1,19 @@
 import React from "react";
+import  PropTypes from 'prop-types';
 import "./App.css";
 import {bindActionCreators } from "redux";
 import connect from "react-redux/es/connect/connect";
-import Message from "./../../components/App/Message";
+import Message from '../../components/Message';
 import {TextField} from "@material-ui/core";
 
 
 class App extends React.Component {
+    static propTypes ={
+        chatId: PropTypes.number.isRequired,
+        messages: PropTypes.object.isRequired,
+        chats: PropTypes.object.isRequired,
+        sendMessage: PropTypes.func.isRequired,
+    };
     state = {
         input: '',
     };

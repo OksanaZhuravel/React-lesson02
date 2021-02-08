@@ -6,6 +6,7 @@
 }
 
 
+/*
 .message {
     width: 70%;
     background-color: lightblue;
@@ -14,6 +15,7 @@
     font-size: 18px;
     margin: 5px;
 }
+*/
 
 .message-sender {
     color: gray;
@@ -42,6 +44,13 @@
     padding: 2px;
     text-transform: capitalize;
 }
+.message {
+    background-color: lightblue;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 5px;
+}
 .header {
   width: 100%;
   background-color: cornflowerblue;
@@ -49,6 +58,11 @@
   font-family: Arial;
   font-size: 25px;
   min-height: 60px;
+}
+.profile {
+    padding: 20px;
+    background-color: olivedrab;
+    font-size: 13px;
 }
 .chat-list {
     width: 30%;
@@ -88,9 +102,4 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-}
-.profile {
-    padding: 20px;
-    background-color: olivedrab;
-    font-size: 13px;
 }
